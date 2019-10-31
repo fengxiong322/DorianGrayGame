@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dorian Gray</title>
+	<link rel="stylesheet" type="text/css" href="game.css">
+</head>
+<body>
+	<canvas class="gamewindow" id = "">
+	</canvas>
+	<div class="popup" id = "status">
+		<div = class="popupbox">
+			<button onclick = 'document.getElementById("status").style.display = "none";' class = "closepopup">x</button>
+			<p>Your Portrait:</p>
+			<img src="corruptDorian.jpg" id = "corrupt">
+			<img src="normalDorian.jpg" id = "normal">
+		</div>
+	</div>
+	<div onclick='document.getElementById("status").style.display = "block";' id="progressBar"><div onclick='document.getElementById("status").style.display = "block";' id="progressIndicator"></div></div>
+	<button onclick="getRandomGame()">RandomGame</button>
+	<button onclick='document.getElementById("helpmenu").style.display = "block";'>?</button>
+	<div class="popup" id = "helpmenu">
+		<div = class="popupbox">
+			<button onclick = 'document.getElementById("helpmenu").style.display = "none";' class = "closepopup">x</button>
+			<h1>Stuck?</h1>
+			<p>Learn how to play the game here</p>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="main.js"></script>
+</html>
