@@ -8,7 +8,7 @@ function dodge(){
 	var offscreen = new OffscreenCanvas(width, height);
 	var prectx = offscreen.getContext('2d');
 	var base_image = new Image();
-  	base_image.src = 'img/lordhenry.jpg';
+  	base_image.src = 'assets/img/lordhenry.jpg';
 	var blocks = [(Math.round(Math.random()*500)),(Math.round(Math.random()*500)), (Math.round(Math.random()*500)), (Math.round(Math.random()*500)), (Math.round(Math.random()*500))];
 	document.addEventListener('keydown', function dodgepress(event){
 	if(event.keyCode == 37) {
