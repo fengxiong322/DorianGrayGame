@@ -15,7 +15,7 @@ function maze(){
 	var posX = parseInt(firstLine[0]);
 	var posY = parseInt(firstLine[1]);
 	document.getElementById('maze').style.display = "block";
-	for(int i = 0; i<map.length; i++){
+	for(var i = 0; i<map.length; i++){
 		document.getElementById('maze').innerHTML += map[i] + "\n";
 	}
 	document.addEventListener('keydown', function dodgepress(event){//TODO: add updates to the map, and add vertical control
@@ -36,7 +36,7 @@ function maze(){
 		var temp = map;
 		temp[posY]= temp[posY].substr(0, posX) + "@" + temp[posY].substr(posX+1, temp[posY].length());
 		document.getElementById('maze').innerHTML = "";
-		for(int i = 0; i<temp.length; i++){
+		for(var i = 0; i<temp.length; i++){
 			document.getElementById('maze').innerHTML += temp[i] + "\n";
 		}
 	});
