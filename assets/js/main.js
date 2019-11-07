@@ -12,11 +12,20 @@ function render(offscreen){
 	ctx.transferFromImageBitmap(offscreen.transferToImageBitmap());
 }
 
-function getRandomGame(){
-	document.getElementById("rngGame").disabled = true;
-	var number = Math.round(Math.random*5);
-	number = 0;
-	dodge();
+function getNextGame(){
+	document.getElementById("nextGame").disabled = true;
+	number = 1;
+	console.log('rip');
+	switch(number){
+		case 0:
+			dodge();
+			break;
+		case 1:
+			maze();
+			break;
+		default:
+			console.log("No such game!");
+	}
 }
 
 function changeStatus(change){

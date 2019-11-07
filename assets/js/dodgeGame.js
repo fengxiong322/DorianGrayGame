@@ -70,7 +70,7 @@ function dodge(){
 				console.log("hello");
 				render(offscreen);
 				clearInterval(timer);
-				document.getElementById("rngGame").disabled = false;
+				document.getElementById("nextGame").disabled = false;
 				changeStatus(-0.1);
 				return;
 			}

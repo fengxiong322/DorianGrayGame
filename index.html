@@ -16,7 +16,7 @@
 
 	
 <div class = "box">
-			<button onclick= 'document.getElementById("gamepopup").style.display = "block";' class = "gamebutton" >RandomGame</button>
+			<button onclick= 'document.getElementById("gamepopup").style.display = "block";' class = "gamebutton" >Next Game</button>
 	
 			
 </div>
@@ -48,14 +48,20 @@
 
 			<button onclick = 'document.getElementById("gamepopup").style.display = "none";' class = "closepopup"> </button>
 			<p>Test</p>
-			<button onclick = "getRandomGame()" id = "rngGame">Play Game</button>
+			<button onclick = "getNextGame()" id = "nextGame">Play Game</button>
+
 			<canvas class="gamewindow" id = ""></canvas>
+
+			<div id = "maze"></div>
 				
 		</div>
 	</div>
 </div>
 </body>
 <script type="text/javascript" src="assets/js/dodgeGame.js"></script>
+<script type="text/javascript" src="assets/js/maze.js"></script>
 <script type="text/javascript" src="assets/js/main.js"></script>
-
+<footer>
+	<a href="sources.html">Sources</a>
+</footer>
 </html>
