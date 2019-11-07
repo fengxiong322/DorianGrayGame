@@ -8,7 +8,7 @@ function maze(){
 	var client = new XMLHttpRequest();
 	client.open('GET', 'assets/maps/testmap.txt', false);//Deprecated, may need to change
 	client.onreadystatechange = function(){
-		var input = client.responseText.split("\n");
+		input = client.responseText.split("\n");
 	}
 	client.send();
 	var firstLine = input[0].split(" ");
