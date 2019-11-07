@@ -12,7 +12,7 @@ function maze(){
 	}
 	client.send();
 	var firstLine = input[0].split(" ");
-	var map;
+	var map = [];
 	for(var i = 1; i < input.length; i++)
 		map.push(input[i]);
 	var posX = parseInt(firstLine[0]);
