@@ -9,7 +9,7 @@ function maze(){
 	client.open('GET', 'assets/maps/testmap.txt');
 	client.onreadystatechange = function() {
   		console.log(client.responseText);
-  		map = client.responseText.split("\n");
+  		//map = client.responseText.split("\n");
 	}
 	client.send();
 	var firstLine = map[0].split(" ");
