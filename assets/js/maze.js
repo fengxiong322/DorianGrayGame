@@ -5,7 +5,7 @@ function maze(){
 	*/
 	var map;
 	var client = new XMLHttpRequest();
-	client.open('GET', 'testmap.txt');
+	client.open('GET', 'assets/maps/testmap.txt');
 	client.onreadystatechange = function() {
   		console.log(client.responseText);
   		map = client.responseText.split("\n");
