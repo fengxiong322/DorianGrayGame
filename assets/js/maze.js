@@ -6,20 +6,17 @@ function maze(){
 	*/
 	var map;
 	var client = new XMLHttpRequest();
-	client.open('GET', 'assets/maps/testmap.txt');
+	client.open('GET', 'assets/maps/testmap.txt', false);//Deprecated, may need to change
 	client.onreadystatechange = function() {
-  		console.log(client.responseText);
-  		//map = client.responseText.split("\n");
+  		map = client.responseText.split("\n");
 	}
 	client.send();
 	var firstLine = map[0].split(" ");
 	var posX = parseInt(firstLine[0]);
 	var posY = parseInt(firstLine[1]);
-
-	var gameDiv = document.getElementById('maze');
-	gameDiv.style.display = "block";
+	document.getElementById('maze').style.display = "block";
 	for(int i = 0; i<map.length; i++){
-		gameDiv.innerHTML += map[i] + "\n";
+		document.getElementById('maze').innerHTML += map[i] + "\n";
 	}
 	document.addEventListener('keydown', function dodgepress(event){//TODO: add updates to the map, and add vertical control
 		if(event.keyCode == 37){
@@ -38,9 +35,9 @@ function maze(){
 			return;
 		var temp = map;
 		temp[posY]= temp[posY].substr(0, posX) + "@" + temp[posY].substr(posX+1, temp[posY].length());
-		gameDiv.innerHTML = "";
+		document.getElementById('maze').innerHTML = "";
 		for(int i = 0; i<temp.length; i++){
-			gameDiv.innerHTML += temp[i] + "\n";
+			document.getElementById('maze').innerHTML += temp[i] + "\n";
 		}
 	});
 }
