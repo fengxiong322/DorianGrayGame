@@ -11,12 +11,17 @@ function maze(){
   		map = client.responseText.split("\n");
 	}
 	client.send();
+	var firstLine = map[0].split(" ");
+	var posX = parseInt(firstLine[0]);
+	var posY = parseInt(firstLine[1]);
+
 	var gameDiv = document.getElementById('maze');
 	gameDiv.style.display = "block";
 	gameDiv.innerHTML = map;
-	console.log("dun");
-}
-
-function printmaze(){
-
+	document.addEventListener('keydown', function dodgepress(event){//TODO: add updates to the map, and add vertical control
+	if(event.keyCode == 37) {
+       	posX--;
+    }else if(event.keyCode == 39)
+    	posX++;
+});
 }
