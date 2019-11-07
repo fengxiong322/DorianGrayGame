@@ -4,14 +4,17 @@ function maze(){
 	Position of player is determined from the top left
 	Text input format, 0 indexed. First line contains 2 integers, the players starting position, the next lines contain maze values;
 	*/
-	var map;
+	var input;
 	var client = new XMLHttpRequest();
 	client.open('GET', 'assets/maps/testmap.txt', false);//Deprecated, may need to change
-	client.onreadystatechange = function() {
-  		map = client.responseText.split("\n");
+	client.onreadystatechange = function(){
+		var input = client.responseText.split("\n");
 	}
 	client.send();
-	var firstLine = map[0].split(" ");
+	var firstLine = input[0].split(" ");
+	var map;
+	for(var i = 1; i < input.length; i++)
+		map.push(input[i]);
 	var posX = parseInt(firstLine[0]);
 	var posY = parseInt(firstLine[1]);
 	document.getElementById('maze').style.display = "block";
