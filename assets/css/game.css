@@ -57,14 +57,14 @@ body{
 
 .cardbox {
   position: relative;
-  left: 220px;
   bottom: 0px;
   background-color: white;
   padding: 20px;
   width: 70%;
+  max-width: 100em;
+  margin: 0 auto;
   height: 1000px;
   opacity: 0.85;
-
 }
 
 .gamebutton {
