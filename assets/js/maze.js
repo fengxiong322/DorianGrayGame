@@ -37,7 +37,7 @@ function maze(){
 		}else
 			return;
 		document.getElementById('maze').innerHTML = "";
-		for(var i = 0; i<temp.length; i++){
+		for(var i = 0; i<map.length; i++){
 			if(posY == i)
 				document.getElementById('maze').innerHTML += map[i].substring(0, posX) + "@" + map[i].substring(posX+1, map[i].length)+ "<br>";
 			else
