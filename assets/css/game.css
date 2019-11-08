@@ -1,4 +1,4 @@
-.gamewindow{
+.gamewindow {
   display: none;
   top:0;
   left:0;
@@ -9,23 +9,23 @@
   z-index: -1;
 }
 
-#maze{
+#maze {
   display:none;
   font-family: monospace;
 }
 
-html, body{
+html, body {
 	height: 100%;
 }
 
-body{
+body {
   margin: 0;
   padding: 10;
   overflow: hidden;
   background-image:url("https://i.pinimg.com/564x/72/0f/1d/720f1d39c85121582c79142df09a23d0.jpg");
 }
 
-.popup{
+.popup {
   display: none;
   position: fixed;
   left: 0;
@@ -37,7 +37,7 @@ body{
   opacity: 1.0;
 }
 
-.popupbox{
+.popupbox {
   position: relative;
   background-color: #D5D5D5;
   margin: 5% auto;
@@ -49,11 +49,12 @@ body{
   opacity: 1.0;
 }
 
-.closepopup{
+.closepopup {
   float: right;
   background-color: black;
   padding: 10px 10px;
 }
+
 .closepopup:hover {
   background-color: white; 
   color: gray;
@@ -87,19 +88,19 @@ body{
   width: 50%; 
 }
 
-#corrupt{
+#corrupt {
   position: relative;
   left: 0;
 }
 
-#normal{
+#normal {
   position: absolute;
   left: 0;
   padding-left: 20px;
   opacity: 0.5;
 }
 
-#progressBar{
+#progressBar {
   border-radius: 12px;
   width: 500px;
   height: 20px;
@@ -110,13 +111,12 @@ body{
   left: 25%;
 }
 
-#progressIndicator{
+#progressIndicator {
   border-radius: 12px;
   width: 50%;
   height: 20px;
   background-color: blue;
 }
 
-.playagain{
-  
+.playagain {
 }
