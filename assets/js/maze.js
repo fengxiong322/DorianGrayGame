@@ -19,7 +19,7 @@ function maze(){
 	var posY = parseInt(firstLine[1]);
 	document.getElementById('maze').style.display = "block";
 	for(var i = 0; i<map.length; i++){
-		document.getElementById('maze').innerHTML += map[i] + "\n";
+		document.getElementById('maze').innerHTML += map[i] + "<br>";
 	}
 	document.addEventListener('keydown', function dodgepress(event){//TODO: add updates to the map, and add vertical control
 		if(event.keyCode == 37){
@@ -40,13 +40,13 @@ function maze(){
 		temp[posY]= temp[posY].substr(0, posX) + "@" + temp[posY].substr(posX+1, temp[posY].length());
 		document.getElementById('maze').innerHTML = "";
 		for(var i = 0; i<temp.length; i++){
-			document.getElementById('maze').innerHTML += temp[i] + "\n";
+			document.getElementById('maze').innerHTML += temp[i] + "<br>";
 		}
 	});
 }
 
 function checkMap(map, posX, posY){
-	if(posX < 0 || posX > map[0].length()-1||posY<0||posY>map.length-1 || map[posY].charAt(posX)=='#')
+	if(posX < 0 || posX > map[0].length-1||posY<0||posY>map.length-1 || map[posY].charAt(posX)=='#')
 		return false;
 	return true;
 }
