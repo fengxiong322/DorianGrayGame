@@ -18,7 +18,10 @@ function maze() {
   var posY = parseInt(firstLine[1]);
   document.getElementById('maze').style.display = "block";
   for (var i = 0; i < map.length; i++) {
-    document.getElementById('maze').innerHTML += map[i] + "<br>";
+    if(posY == i)
+        document.getElementById('maze').innerHTML += map[i].substring(0, posX) + "@" + map[i].substring(posX+1, map[i].length)+ "<br>";
+      else
+        document.getElementById('maze').innerHTML += map[i] + "<br>";
   }
   document.addEventListener('keydown', function dodgepress(event) { //TODO: add updates to the map, and add vertical control
     if (event.keyCode == 37) {
@@ -46,7 +49,7 @@ function maze() {
 }
 
 function checkMap(map, posX, posY) {
-  if (posX < 0 || posX > map[0].length - 1 || posY < 0 || posY > map.length - 1 || map[posY].charAt(posX) == '#')
+  if (posX < 0 || posX > map[0].length - 1 || posY < 0 || posY > map.length - 2 || map[posY].charAt(posX) == '#')
     return false;
   return true;
 }
