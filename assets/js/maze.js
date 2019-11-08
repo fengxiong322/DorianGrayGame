@@ -32,16 +32,16 @@ function maze(){
 			if(checkMap(map, posX, posY+1))
 				posY++;
 		}else if(event.keyCode == 40){
-			if(checkMap(map, posX-1, posY-1))
+			if(checkMap(map, posX, posY-1))
 				posY--;
 		}else
 			return;
-		var temp = map;
-		console.log(map);
-		temp[posY]= temp[posY].substr(0, posX) + "@" + temp[posY].substr(posX+1, temp[posY].length);
 		document.getElementById('maze').innerHTML = "";
 		for(var i = 0; i<temp.length; i++){
-			document.getElementById('maze').innerHTML += temp[i] + "<br>";
+			if(posY == i)
+				document.getElementById('maze').innerHTML += map[i].substring(0, posX) + "@" + map[i].substring(posX+1, map[i].length)+ "<br>";
+			else
+				document.getElementById('maze').innerHTML += map[i] + "<br>";
 		}
 	});
 }
