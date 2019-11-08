@@ -37,7 +37,7 @@ function maze(){
 		}else
 			return;
 		var temp = map;
-		temp[posY]= temp[posY].substr(0, posX) + "@" + temp[posY].substr(posX+1, temp[posY].length());
+		temp[posY]= temp[posY].substr(0, posX) + "@" + temp[posY].substr(posX+1, temp[posY].length;
 		document.getElementById('maze').innerHTML = "";
 		for(var i = 0; i<temp.length; i++){
 			document.getElementById('maze').innerHTML += temp[i] + "<br>";
