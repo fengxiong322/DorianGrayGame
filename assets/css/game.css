@@ -14,12 +14,15 @@
   font-family: monospace;
 }
 
+html, body{
+	height: 100%;
+}
 
 body{
   margin: 0;
   padding: 10;
   overflow: hidden;
-  background-image:url("https://i.pinimg.com/564x/72/0f/1d/720f1d39c85121582c79142df09a23d0.jpg") ;
+  background-image:url("https://i.pinimg.com/564x/72/0f/1d/720f1d39c85121582c79142df09a23d0.jpg");
 }
 
 .popup{
@@ -58,13 +61,12 @@ body{
 
 .cardbox {
   position: relative;
-  bottom: 0px;
   background-color: white;
   padding: 20px;
   width: 70%;
+  height: 100%;
   max-width: 90em;
   margin: 0 auto;
-  height: 1000px;
   opacity: 0.85;
 }
 
