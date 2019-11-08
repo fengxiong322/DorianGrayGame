@@ -8,32 +8,31 @@ var ctx = canvas.getContext("bitmaprenderer");
 document.getElementById("normal").style.opacity = 0.5;
 
 //offscreen: new OffscreenCanvas
-function render(offscreen){
-	ctx.transferFromImageBitmap(offscreen.transferToImageBitmap());
+function render(offscreen) {
+  ctx.transferFromImageBitmap(offscreen.transferToImageBitmap());
 }
 
-function getNextGame(){
-	document.getElementById("nextGame").disabled = true;
-	number = 1;
-	console.log('rip');
-	switch(number){
-		case 0:
-			dodge();
-			break;
-		case 1:
-			maze();
-			break;
-		default:
-			console.log("No such game!");
-	}
+function getNextGame() {
+  document.getElementById("nextGame").disabled = true;
+  number = 1;
+  console.log('rip');
+  switch(number) {
+    case 0:
+      dodge();
+      break;
+    case 1:
+      maze();
+      break;
+    default:
+      console.log("No such game!");
+  }
 }
 
-function changeStatus(change){
-	var newValue = parseFloat(document.getElementById("normal").style.opacity) + parseFloat(change);
-	document.getElementById("normal").style.opacity = newValue;
-	console.log(newValue);
-	console.log(document.getElementById("normal").style.opacity);
-	document.getElementById("normal").style.opacity = newValue;
-	document.getElementById("progressIndicator").style.width = (newValue*100) + "%";
+function changeStatus(change) {
+  var newValue = parseFloat(document.getElementById("normal").style.opacity) + parseFloat(change);
+  document.getElementById("normal").style.opacity = newValue;
+  console.log(newValue);
+  console.log(document.getElementById("normal").style.opacity);
+  document.getElementById("normal").style.opacity = newValue;
+  document.getElementById("progressIndicator").style.width = (newValue*100) + "%";
 }
-
