@@ -29,11 +29,11 @@ function maze(){
 			if(checkMap(map, posX+1, posY))
     				posX++;
 		}else if(event.keyCode == 38){
-			if(checkMap(map, posX, posY+1))
-				posY++;
-		}else if(event.keyCode == 40){
 			if(checkMap(map, posX, posY-1))
 				posY--;
+		}else if(event.keyCode == 40){
+			if(checkMap(map, posX, posY+1))
+				posY++;
 		}else
 			return;
 		document.getElementById('maze').innerHTML = "";
