@@ -8,15 +8,15 @@ var ctx = canvas.getContext("bitmaprenderer");
 document.getElementById("normal").style.opacity = 0.5;
 
 //offscreen: new OffscreenCanvas
-function render(offscreen){
+function render(offscreen) {
   ctx.transferFromImageBitmap(offscreen.transferToImageBitmap());
 }
 
-function getNextGame(){
+function getNextGame() {
   document.getElementById("nextGame").disabled = true;
   number = 1;
   console.log('rip');
-  switch(number){
+  switch(number) {
     case 0:
       dodge();
       break;
@@ -28,7 +28,7 @@ function getNextGame(){
   }
 }
 
-function changeStatus(change){
+function changeStatus(change) {
   var newValue = parseFloat(document.getElementById("normal").style.opacity) + parseFloat(change);
   document.getElementById("normal").style.opacity = newValue;
   console.log(newValue);
