@@ -9,8 +9,12 @@
   z-index: -1;
 }
 
+#loseDiv, #winDiv{
+	display: none;
+}
 
 #dodge {
+  position: relative;
   display: none;
   top:0;
   left:0;
@@ -18,7 +22,6 @@
   overflow: hidden;
   width: 500px;
   height:500px;
-  z-index: -1;
 }
 
 #maze {

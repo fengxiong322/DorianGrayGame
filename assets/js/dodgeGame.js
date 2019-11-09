@@ -6,20 +6,20 @@ function dodge() {
   	var playerSpan = document.createElement('span');
   	playerSpan.innerHTML = "@";
   	document.getElementById( 'dodge' ).appendChild(playerSpan);
-  	playerSpan.style.position = "relative";
+  	playerSpan.style.position = "absolute";
   	playerSpan.style.top = playerHeight+"px";
   	playerSpan.style.left = "100px";
   	playerSpan.style.fontFamily = "monospace";
   	playerSpan.style.fontSize = "15px";
-  	var obstacles=[document.createElement('span'), document.createElement('span'), document.createElement('span'), document.createElement('span')];
+  	var obstacles=[document.createElement('span'), document.createElement('span'), document.createElement('span'), document.createElement('span'), document.createElement('span'), document.createElement('span'), document.createElement('span'), document.createElement('span'), document.createElement('span'), document.createElement('span'), document.createElement('span'), document.createElement('span'), document.createElement('span'), document.createElement('span'), document.createElement('span'), document.createElement('span')];
   	for (var i = 0; i < obstacles.length; i++) {
   		obstacles[i].style.whiteSpace = "nowrap";
-  		obstacles[i].style.position = "relative";
+  		obstacles[i].style.position = "absolute";
   		obstacles[i].style.fontFamily = "monospace";
   		obstacles[i].style.fontSize = "15px";
-  		obstacles[i].innerHTML = "A";//Random text
+  		obstacles[i].innerHTML = "Aestheism";//Random text
   		obstacles[i].style.left = Math.round(Math.random()*300)+"px";
-  		obstacles[i].style.top = 0-Math.round(Math.random()*100)+"px";
+  		obstacles[i].style.top = 0-Math.round(Math.random()*300)+"px";
   		document.getElementById( 'dodge' ).appendChild(obstacles[i]);
   	}
   	document.addEventListener('keydown', function dodgepress(event) {
@@ -36,22 +36,24 @@ function dodge() {
   	});
 
   	var timer = setInterval(function() {
-  		x+=move;
+  		x+=move*2;
   		playerSpan.style.left = x + "px";
   		for (var i = 0; i < obstacles.length; i++) {
   			obstacles[i].style.top = parseInt(obstacles[i].style.top.substring(0, obstacles[i].style.top.length-2))+1 + "px";
-  			var blockY = parseInt(obstacles[i].style.top.substring(0, obstacles[i].style.top.length-2));
+        var blockY = parseInt(obstacles[i].style.top.substring(0, obstacles[i].style.top.length-2));
+        var blockX = parseInt(obstacles[i].style.left.substring(0, obstacles[i].style.left.length-2));
   			if(blockY>playerHeight+100){//Move block to top
-  				obstacles[i].innerHTML = "hello me name bob";//Random text
+  				obstacles[i].innerHTML = "A";//Random text
   				obstacles[i].style.left = Math.round(Math.random()*300)+"px";
-  				obstacles[i].style.top = 0-Math.round(Math.random()*100)+"px";
+  				obstacles[i].style.top = 0-Math.round(Math.random()*300)+"px";
   			}
-  			var blockX = parseInt(obstacles[i].style.left.substring(0, obstacles[i].style.left.length-2));
-  			if(!(blockX> x||
-  				blockX+obstacles[i].offsetWidth < x-playerSpan.offsetWidth || 
-  				blockY>playerHeight+playerSpan.offsetHeight || 
-  				blockY+obstacles[i].offsetHeight<playerHeight)){
-  				console.log("LOSE SCREEN");
+            if(!(blockX+obstacles[i].offsetWidth<x ||
+              blockX>x+playerSpan.offsetWidth||
+              blockY+obstacles[i].offsetHeight<playerHeight ||
+              blockY>playerHeight + playerSpan.offsetHeight)){
+          clearInterval(timer);
+        document.getElementById( 'dodge' ).style.display = "none";
+  			   lose("Oh Nose! You have succumbed to Lord Henry's beautiful words! His strong belief of " + obstacles[i].innerHTML);
   			}
   		}
   	}, 10);

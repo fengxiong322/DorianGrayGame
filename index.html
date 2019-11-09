@@ -16,7 +16,7 @@
 
   
 <div class = "box">
-      <button onclick= 'document.getElementById("gamepopup").style.display = "block";' class = "gamebutton" >Next Game</button>
+      <button onclick= 'document.getElementById("gamepopup").style.display = "block";' class = "gamebutton" >Play Game</button>
   
       
 </div>
@@ -35,7 +35,7 @@
   </div>
 
     <div class="popup" id = "status">
-    <div = class="popupbox">
+    <div class="popupbox">
       <button onclick = 'document.getElementById("status").style.display = "none";' class = "closepopup"> </button>
       <p>Your Portrait:</p>
       <img src="assets/img/corruptDorian.jpg" id = "corrupt">
@@ -48,7 +48,7 @@
 
       <button onclick = 'document.getElementById("gamepopup").style.display = "none";' class = "closepopup"> </button>
       <p>Test</p>
-      <button onclick = "getNextGame()" id = "nextGame">Play Game</button>
+      <button onclick = "getNextGame()" id = "nextGame">Next Game</button>
 
       <canvas class="gamewindow" id = ""></canvas>
 
@@ -56,7 +56,21 @@
       </div>
 
       <div id = "maze"></div>
-        
+       
+
+      <div id = "loseDiv">
+      	<h1>You Lose! ;(</h1>
+      	<p>That was a good attempt! However, you didn't beat this minigame.</p>
+      	<p id = "loseCustomState"></p>
+      	<p>When you are ready, proceed to the next game by pressing the "Next Game" button.</p>
+      </div>
+
+      <div id = "winDiv">
+      	<h1>You Win! :)</h1>
+      	<p>You did it! Your efforts paid off, and you have improved.</p>
+      	<p id = "winCustomState"></p>
+      	<p>When you are ready, proceed to the next game by pressing the "Next Game" button.</p>
+      </div>
     </div>
   </div>
 </div>
@@ -64,6 +78,7 @@
     <a href="sources.html">Sources</a>
   </footer>
 </body>
+<script type="text/javascript" src="assets/js/base.js"></script>
 <script type="text/javascript" src="assets/js/dodgeGame.js"></script>
 <script type="text/javascript" src="assets/js/maze.js"></script>
 <script type="text/javascript" src="assets/js/main.js"></script>
