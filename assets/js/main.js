@@ -14,8 +14,7 @@ function render(offscreen) {
 
 function getNextGame() {
   document.getElementById("nextGame").disabled = true;
-  number = 1;
-  console.log('rip');
+  number = 0;
   switch(number) {
     case 0:
       dodge();
