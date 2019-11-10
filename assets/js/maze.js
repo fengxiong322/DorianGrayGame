@@ -13,6 +13,7 @@ async function maze() {
   }
   client.send();*/
   var firstLine = json.start;
+  var points = 0;
   var map = json.map;
   console.log(map);
   var posX = parseInt(firstLine[0]);
@@ -39,6 +40,7 @@ async function maze() {
         posY++;
     } else
       return;
+    //Legal Moves Check
     document.getElementById('maze').innerHTML = "";
     for (var i = 0; i < map.length; i++){
       if(posY == i)
@@ -46,11 +48,38 @@ async function maze() {
       else
         document.getElementById('maze').innerHTML += map[i] + "<br>";
     }
+    //Win Check
+    if(posX == json.finish[0] && posY = json.finish[1]){
+      if(points>0){
+        win("Wew! You scored a " + points);
+      }else(points<=0){
+        lose("rip you scored a "+ points);
+      }
+    }
+    //Events
+    for(var i = 0; i < json.alerts; i++){
+      if(posX == json.alerts[i][0] && posY = json.alerts[i][1]){
+        if(confirm(json.alerts[i][2])){
+          if(json.alerts[i][3])
+            points++;
+          else
+            points--;
+          alert(json.alerts[i][4]);
+        }else{
+          if(!json.alerts[i][3])
+            points++;
+          else
+            points--;
+          alert(json.alerts[i][5]);
+        }
+      }
+    }
+
   });
 }
 
 function checkMap(map, posX, posY) {
-  if (posX < 0 || posX > map[0].length - 1 || posY < 0 || posY > map.length - 2 || map[posY].charAt(posX) == '#')
+  if (posX < 0 || posX > map[0].length - 1 || posY < 0 || posY > map.length - 1 || map[posY].charAt(posX) == '#')
     return false;
   return true;
 }

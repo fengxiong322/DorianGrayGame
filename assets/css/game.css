@@ -36,13 +36,6 @@ html, body {
 	height: 100%;
 }
 
-footer{
-	position: absolute;
-  bottom: 50px;
-  z-index: 0;
-
-}
-
 body {
   margin: 0;
   padding: 10;
@@ -59,7 +52,6 @@ body {
   height: 100%;
   background-color: rgb(10,10,10);
   background-color: rgba(0,0,0,0.4);
-  opacity: 1.0;
 }
 
 .popupbox {
@@ -71,7 +63,8 @@ body {
   height: 80%;
   max-width: 60em;
   max-height: 60em;
-  background-color: rgba(255,255,255,0.85);
+  background-color: rgba(255,255,255,1);
+  z-index: 2;
 }
 
 .closepopup {
