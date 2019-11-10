@@ -49,7 +49,7 @@ async function maze() {
         document.getElementById('maze').innerHTML += map[i] + "<br>";
     }
     //Win Check
-    if(posX == json.finish[0] && posY = json.finish[1]){
+    if(posX == json.finish[0] && posY == json.finish[1]){
       if(points>0){
         win("Wew! You scored a " + points);
       }else(points<=0){
