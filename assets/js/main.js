@@ -15,8 +15,8 @@ function render(offscreen) {
 
 function getNextGame() {
   document.getElementById("nextGame").disabled = true;
-  document.getElementById("loseDiv").display = "none";
-  document.getElementById("winDiv").display = "none";
+  document.getElementById("loseDiv").style.display = "none";
+  document.getElementById("winDiv").style.display = "none";
   switch(number) {
     case 0:
       dodge();
@@ -30,7 +30,7 @@ function getNextGame() {
   number++;
 }
 
-function changeStatus(change) {
+function changeStatus(change = 0.1) {
   var newValue = parseFloat(document.getElementById("normal").style.opacity) + parseFloat(change);
   document.getElementById("normal").style.opacity = newValue;
   console.log(newValue);
