@@ -37,7 +37,8 @@ function dodge() {
     var counter = 0;
   	var timer = setInterval(function() {
       counter++;
-      if(x+move*2<playerSpan.offsetWidth)
+      if(x+move*2+playerSpan.offsetWidth<document.getElementById('dodge').offsetWidth &&
+        x+move*2>0)
   		x+=move*2;
   		playerSpan.style.left = x + "px";
   		for (var i = 0; i < obstacles.length; i++) {
