@@ -3,7 +3,6 @@ async function maze() {
   Position of player is determined from the top left
   Text input format, 0 indexed. First line contains 2 integers, the players starting position, the next lines contain maze values;
   */
-  var input="";
   const response = await fetch('assets/maps/map.json');
   const json = await response.json();
   console.log(json);
@@ -13,10 +12,8 @@ async function maze() {
     input = client.responseText.split("\n");
   }
   client.send();*/
-  var firstLine = input[0].split(" ");
-  var map = [];
-  for (var i = 1; i < input.length; i++)
-    map.push(input[i]);
+  var firstLine = json.start;
+  var map = json.map;
   var posX = parseInt(firstLine[0]);
   var posY = parseInt(firstLine[1]);
   document.getElementById('maze').style.display = "block";
