@@ -57,7 +57,7 @@ async function maze() {
       }
     }
     //Events
-    for(var i = 0; i < json.alerts; i++){
+    for(var i = 0; i < json.alerts.length; i++){
       if(posX == json.alerts[i][0] && posY == json.alerts[i][1]){
         if(confirm(json.alerts[i][2])){
           if(json.alerts[i][3])
