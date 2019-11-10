@@ -18,6 +18,7 @@ async function maze() {
   console.log(map);
   var posX = parseInt(firstLine[0]);
   var posY = parseInt(firstLine[1]);
+  var disabled = new Array(json.alerts.length);
   document.getElementById('maze').style.display = "block";
   for (var i = 0; i < map.length; i++) {
     if(posY == i)
@@ -58,7 +59,9 @@ async function maze() {
     }
     //Events
     for(var i = 0; i < json.alerts.length; i++){
-      if(posX == json.alerts[i][0] && posY == json.alerts[i][1]){
+
+      if(!disabled[i]&&posX == json.alerts[i][0] && posY == json.alerts[i][1]){
+        disabled[i] = true;
         if(confirm(json.alerts[i][2])){
           if(json.alerts[i][3])
             points++;
