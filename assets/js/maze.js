@@ -14,6 +14,7 @@ async function maze() {
   client.send();*/
   var firstLine = json.start;
   var map = json.map;
+  console.log(map);
   var posX = parseInt(firstLine[0]);
   var posY = parseInt(firstLine[1]);
   document.getElementById('maze').style.display = "block";

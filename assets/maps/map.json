@@ -4,11 +4,11 @@
 	"alerts": [
 		[0,1, "Talk to Henry?",true, "You flee!", "Henry lures you further down a terrible path..."],
 		[0, 2, "Question to yes or no",true, "Answer1", "Answer2"]],
-	"map": [["--------"],
-		["--------"],
-		["--------"],
-		["--------"],
-		["--------"],
-		["--------"]
+	"map": ["--------",
+		"--------",
+		"--------",
+		"--------",
+		"--------",
+		"--------"
 		]
 }
