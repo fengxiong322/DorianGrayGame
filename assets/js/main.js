@@ -15,6 +15,8 @@ function render(offscreen) {
 
 function getNextGame() {
   document.getElementById("nextGame").disabled = true;
+  document.getElementById("loseDiv").display = "none";
+  document.getElementById("winDiv").display = "none";
   switch(number) {
     case 0:
       dodge();
@@ -52,5 +54,5 @@ function win(input, change){
 }
 
 function prepareNext(){
-	getNextGame();
+	document.getElementById("nextGame").disabled = false;
 }
