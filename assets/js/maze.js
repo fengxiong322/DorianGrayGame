@@ -1,15 +1,18 @@
-function maze() {
+async function maze() {
   /*
   Position of player is determined from the top left
   Text input format, 0 indexed. First line contains 2 integers, the players starting position, the next lines contain maze values;
   */
-  var input;
-  var client = new XMLHttpRequest();
+  var input="";
+  const response = await fetch('assets/maps/map.json');
+  const json = await response.json();
+  console.log(json);
+  /*var client = new XMLHttpRequest();
   client.open('GET', 'assets/maps/testmap.txt', false);//Deprecated, may need to change
   client.onreadystatechange = function() {
     input = client.responseText.split("\n");
   }
-  client.send();
+  client.send();*/
   var firstLine = input[0].split(" ");
   var map = [];
   for (var i = 1; i < input.length; i++)

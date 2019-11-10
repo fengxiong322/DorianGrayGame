@@ -1,6 +1,6 @@
 function dodge() {
 	document.getElementById( 'dodge' ).style.display = "block";
-	const playerHeight = 100;
+	const playerHeight = 300;
 	var x = 100;
   	var move = 0;
   	var playerSpan = document.createElement('span');
@@ -17,7 +17,7 @@ function dodge() {
   		obstacles[i].style.position = "absolute";
   		obstacles[i].style.fontFamily = "monospace";
   		obstacles[i].style.fontSize = "15px";
-  		obstacles[i].innerHTML = "Aestheism";//Random text
+  		obstacles[i].innerHTML = "A";//Random text
   		obstacles[i].style.left = Math.round(Math.random()*300)+"px";
   		obstacles[i].style.top = 0-Math.round(Math.random()*300)+"px";
   		document.getElementById( 'dodge' ).appendChild(obstacles[i]);
@@ -34,8 +34,10 @@ function dodge() {
     	} else if (event.keyCode == 39 && move>0)
       		move = 0;
   	});
-
+    var counter = 0;
   	var timer = setInterval(function() {
+      counter++;
+      if(x+move*2<playerSpan.offsetWidth)
   		x+=move*2;
   		playerSpan.style.left = x + "px";
   		for (var i = 0; i < obstacles.length; i++) {
@@ -56,5 +58,10 @@ function dodge() {
   			   lose("Oh Nose! You have succumbed to Lord Henry's beautiful words! His strong belief of " + obstacles[i].innerHTML);
   			}
   		}
+      if(counter > 1000){//10 seconds
+        clearInterval(timer);
+        document.getElementById( 'dodge' ).style.display = "none";
+           win("You succeeded in dodging all obstacles!");
+      }
   	}, 10);
 }
