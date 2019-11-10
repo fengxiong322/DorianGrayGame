@@ -5,6 +5,7 @@ var canvas = document.querySelector(".gamewindow");
 var width = canvas.width=600;
 var height = canvas.height = 550;
 var ctx = canvas.getContext("bitmaprenderer");
+var number = 0;
 document.getElementById("normal").style.opacity = 0.5;
 
 //offscreen: new OffscreenCanvas
@@ -14,7 +15,6 @@ function render(offscreen) {
 
 function getNextGame() {
   document.getElementById("nextGame").disabled = true;
-  number = 1;
   switch(number) {
     case 0:
       dodge();
@@ -25,6 +25,7 @@ function getNextGame() {
     default:
       console.log("No such game!");
   }
+  number++;
 }
 
 function changeStatus(change) {
@@ -34,4 +35,22 @@ function changeStatus(change) {
   console.log(document.getElementById("normal").style.opacity);
   document.getElementById("normal").style.opacity = newValue;
   document.getElementById("progressIndicator").style.width = (newValue*100) + "%";
+}
+
+function lose(input, change){
+	changeStatus(change);
+	document.getElementById('loseCustomState').innerHTML = input;
+	document.getElementById('loseDiv').style.display = "block";
+	prepareNext();
+}
+
+function win(input, change){
+	changeStatus(change);
+	document.getElementById('winCustomState').innerHTML = input;
+	document.getElementById('winDiv').style.display = "block";
+	prepareNext();
+}
+
+function prepareNext(){
+	getNextGame();
 }
