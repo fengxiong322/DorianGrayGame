@@ -23,53 +23,53 @@
         </div>
 
         <div class="popup" id="helpmenu">
-            <div=c lass="popupbox">
+            <div class="popupbox">
                 <button onclick='document.getElementById("helpmenu").style.display = "none";' class="closepopup"> </button>
                 <h1>Stuck?</h1>
                 <p>Learn how to play the game here: Note: This game is best played on a computer.
 
                     <a href="sources.html">Sources</a></p>
+            </div>
         </div>
-    </div>
 
-    <div class="popup" id="status">
-        <div class="popupbox">
-            <button onclick='document.getElementById("status").style.display = "none";' class="closepopup"> </button>
-            <p>Your Portrait:</p>
-            <img src="assets/img/corruptDorian.jpg" id="corrupt">
-            <img src="assets/img/normalDorian.jpg" id="normal">
+        <div class="popup" id="status">
+            <div class="popupbox">
+                <button onclick='document.getElementById("status").style.display = "none";' class="closepopup"> </button>
+                <p>Your Portrait:</p>
+                <img src="assets/img/corruptDorian.jpg" id="corrupt">
+                <img src="assets/img/normalDorian.jpg" id="normal">
+            </div>
         </div>
-    </div>
 
-    <div class="popup" id="gamepopup">
-        <div=c lass="popupbox">
+        <div class="popup" id="gamepopup">
+            <div lass="popupbox">
 
-            <button onclick='document.getElementById("gamepopup").style.display = "none";' class="closepopup"> </button>
-            <p>Test</p>
-            <button onclick="getNextGame()" id="nextGame">Next Game</button>
+                <button onclick='document.getElementById("gamepopup").style.display = "none";' class="closepopup"> </button>
+                <p>Test</p>
+                <button onclick="getNextGame()" id="nextGame">Next Game</button>
 
-            <canvas class="gamewindow" id=""></canvas>
+                <canvas class="gamewindow" id=""></canvas>
 
-            <div id="dodge">
+                <div id="dodge">
+                </div>
+
+                <div id="maze"></div>
+
+                <div id="loseDiv">
+                    <h1>You Lose! ;(</h1>
+                    <p>That was a good attempt! However, you didn't beat this minigame.</p>
+                    <p id="loseCustomState"></p>
+                    <p>When you are ready, proceed to the next game by pressing the "Next Game" button.</p>
+                </div>
+
+                <div id="winDiv">
+                    <h1>You Win! :)</h1>
+                    <p>You did it! Your efforts paid off, and your portrait has improved.</p>
+                    <p id="winCustomState"></p>
+                    <p>When you are ready, proceed to the next game by pressing the "Next Game" button.</p>
+                </div>
             </div>
-
-            <div id="maze"></div>
-
-            <div id="loseDiv">
-                <h1>You Lose! ;(</h1>
-                <p>That was a good attempt! However, you didn't beat this minigame.</p>
-                <p id="loseCustomState"></p>
-                <p>When you are ready, proceed to the next game by pressing the "Next Game" button.</p>
-            </div>
-
-            <div id="winDiv">
-                <h1>You Win! :)</h1>
-                <p>You did it! Your efforts paid off, and your portrait has improved.</p>
-                <p id="winCustomState"></p>
-                <p>When you are ready, proceed to the next game by pressing the "Next Game" button.</p>
-            </div>
-    </div>
-    </div>
+        </div>
 
     </div>
 
