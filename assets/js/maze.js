@@ -44,10 +44,13 @@ async function maze() {
         //Win Check
         if (posX == json.finish[0] && posY == json.finish[1]) {
             if (points > 0) {
+                document.getElementById('maze').style.display = "none";
                 win("Wew! You scored a " + points);
             } else {
+                document.getElementById('maze').style.display = "none";
                 lose("rip you scored a " + points);
             }
+            return;
         }
         //Events
         for (var i = 0; i < json.alerts.length; i++) {

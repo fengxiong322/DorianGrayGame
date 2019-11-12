@@ -17,6 +17,7 @@ function getNextGame() {
   document.getElementById("nextGame").disabled = true;
   document.getElementById("loseDiv").style.display = "none";
   document.getElementById("winDiv").style.display = "none";
+  number = 2;
   switch(number) {
     case 0:
       dodge();
@@ -24,6 +25,8 @@ function getNextGame() {
     case 1:
       maze();
       break;
+    case 2:
+      quiz();
     default:
       console.log("No such game!");
   }
