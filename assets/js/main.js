@@ -1,10 +1,4 @@
-//Base js: Sets up the canvas and provides global variables
-var canvas = document.querySelector(".gamewindow");
-//var width = canvas.width = window.innerWidth;
-//var height = canvas.height = window.innerHeight;
-var width = canvas.width=600;
-var height = canvas.height = 550;
-var ctx = canvas.getContext("bitmaprenderer");
+
 var number = 0;
 document.getElementById("normal").style.opacity = 0.5;
 
@@ -17,16 +11,20 @@ function getNextGame() {
   document.getElementById("nextGame").disabled = true;
   document.getElementById("loseDiv").style.display = "none";
   document.getElementById("winDiv").style.display = "none";
-  number = 2;
+  number = 0;
   switch(number) {
     case 0:
       dodge();
       break;
     case 1:
-      maze();
+      bounce();
       break;
     case 2:
+      options();
+      break;
+    case 3:
       quiz();
+      break;
     default:
       console.log("No such game!");
   }

@@ -26,9 +26,18 @@
             <div class="popupbox">
                 <button onclick='document.getElementById("helpmenu").style.display = "none";' class="closepopup"> </button>
                 <h1>Stuck?</h1>
-                <p>Learn how to play the game here: Note: This game is best played on a computer.
-
-                    <a href="sources.html">Sources</a></p>
+<p>Learn how to play the game here:<br>
+Dodging Game: The first game is a dodging game. The objective is to catch 5 good comments, which is just to ignore Henry. However, other blocks will be falling at the same time, so watch out! Don't get hit by Henry's influence
+<br><br>
+Save Hetty: Save Hetty from yourself! Hetty is in a tight situation and needs your help! Dorian's terrible influence is threatening to ruin Hetty's life! Save her by stopping the balls from hitting Hetty as the fall from the sky.
+<br><br>
+Choose the right path: This is a overhead adventure game, where you play as dorian, answer questions that you incounter in every room. Different paths lead you down different roads and different end results, so choose wisely...
+<br><br>
+The Final Quiz: Finally, it is time to put everything to the test, and see if you can ace this test!
+<br><br>
+Note: This game is best played on a computer.
+<br>
+<a href="sources.html">Sources</a></p>
             </div>
         </div>
 
@@ -45,19 +54,36 @@
             <div class="popupbox">
 
                 <button onclick='document.getElementById("gamepopup").style.display = "none";' class="closepopup"> </button>
-                <p>Test</p>
                 <button onclick="getNextGame()" id="nextGame">Next Game</button>
 
                 <canvas class="gamewindow" id=""></canvas>
 
-                <div class="game" id="dodge">
+                <div class = "game" id = "dodge">
                 </div>
 
-                <div class="game" id="maze"></div>
-
-                <div class="game" id="quiz">
-                	<p>Hiya</p>
+                <div class = "game" id = "quiz">
+                    <form>
+                        <p>1. Question Questions</p>
+                        <input type="radio" name="q1" value="1"> Male<br>
+                        <input type="radio" name="q1" value="2"> Female<br>
+                        <input type="radio" name="q1" value="3"> Other<br>
+                        <p>1. Question Questions</p>
+                        <input type="radio" name="q2" value="1"> Male<br>
+                        <input type="radio" name="q2" value="2"> Female<br>
+                        <input type="radio" name="q2" value="3"> Other<br>
+                        <p>1. Question Questions</p>
+                        <input type="radio" name="q3" value="1"> Male<br>
+                        <input type="radio" name="q3" value="2"> Female<br>
+                        <input type="radio" name="q3" value="3"> Other<br>
+                        <p>1. Question Questions</p>
+                        <input type="radio" name="q4" value="1"> Male<br>
+                        <input type="radio" name="q4" value="2"> Female<br>
+                        <input type="radio" name="q4" value="3"> Other<br>
+                        <button onclick="quizSubmit()">Grade!!</button>
+                    </form>
                 </div>
+
+                <canvas class = "game" id = "hetty"></canvas>
 
                 <div id="loseDiv">
                     <h1>You Lose! ;(</h1>
@@ -81,6 +107,7 @@
 <script defer type="text/javascript" src="assets/js/main.js"></script>
 <script defer type="text/javascript" src="assets/js/dodgeGame.js"></script>
 <script defer type="text/javascript" src="assets/js/maze.js"></script>
+<script defer type="text/javascript" src="assets/js/saveHetty.js"></script>
 <script defer type="text/javascript" src="assets/js/quiz.js"></script>
 
 </html>
