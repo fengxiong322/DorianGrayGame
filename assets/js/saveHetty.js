@@ -188,11 +188,11 @@
     function init() {
       circles = [];
       circle1 = new Circle(10,10,30, 'red',2);
-      circle2 = new Circle(10,10,30, 'red',2);
+      circle2 = new Circle(10,10,30, 'black',2);
 
         for (let i = 0; i < 5; i++) {
           let x = Math.random() * canvas1.width;
-          let y = (Math.random() * (canvas1.height-200));
+          let y = (Math.random() * (canvas1.height-300));
           let radius = 10;
           circles.push(new Circle(x,y,radius,'blue',0.5));
         } 
