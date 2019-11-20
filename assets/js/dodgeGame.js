@@ -66,7 +66,7 @@ function dodge() {
                 clearInterval(timer);
                 console.log(blockX + " " + blockY + " " + obstacles[i].offsetWidth + " " + obstacles[i].offsetHeight + " " + playerHeight + " " + x);
                 document.getElementById('dodge').style.display = "none";
-                lose("Oh Nose! You have succumbed to Lord Henry's " + obstacles[i].innerHTML);
+                lose("Oh No! You have succumbed to Lord Henry's " + obstacles[i].innerHTML);
             }
             
         }

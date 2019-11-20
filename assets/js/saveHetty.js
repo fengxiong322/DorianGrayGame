@@ -107,7 +107,7 @@
           if (getDistance(circle1.x,circle1.y,this.x,this.y) - (circle1.radius + this.radius)< 0) {
             //Lose Condition
             canvas1.style.display = "none";
-            lose("Rip, Dorian was unable to protect Hetty from himself. As a result, your soul has become more corrupt", 0.1);
+            lose("Rip, Dorian was unable to protect Hetty from himself. As a result, your soul has become more corrupt");
             end = true;
             return;
           }
@@ -156,7 +156,7 @@
           deleted = true;
           if(alive == 0){
             canvas1.style.display = "none";
-            win("Congrats! You succeeded in saving Hetty!", 0.1);
+            win("Congrats! You succeeded in saving Hetty!", 0.02);
             end = true;
             return;
           }
@@ -193,7 +193,7 @@
 
         for (let i = 0; i < 5; i++) {
           let x = Math.random() * canvas1.width;
-          let y = (Math.random() * (canvas1.height-100))+100;
+          let y = (Math.random() * (canvas1.height-200));
           let radius = 10;
           circles.push(new Circle(x,y,radius,'blue',0.5));
         } 
