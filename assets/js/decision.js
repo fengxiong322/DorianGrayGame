@@ -125,13 +125,13 @@ var canvas = document.getElementById("decision");
 							prectx.strokeText("Press any key to move your character to one of the doors",40,310);
 						}
 						console.log(score);	
-						if(runThrough==3){
+						if(runThrough==5){
 							clearInterval(time);
 							canvas.style.display = "none";
-							if(score == 3){
+							if(score == 5){
 								win("Congrats! You succeeded in answer all of the questions");
 							}else
-								lose("You didn't solve all the problems. Your score was "+score + "/3");
+								lose("You didn't solve all the problems. Your score was "+score + "/5");
 						}
 						render(offscreen);
 				},10);
