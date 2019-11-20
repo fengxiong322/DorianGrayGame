@@ -150,7 +150,6 @@
 
         if (this.y + this.radius >= canvas1.height) {
           if(!deleted){
-            console.log("wtf is wrong");
             alive--;
           }
           deleted = true;
