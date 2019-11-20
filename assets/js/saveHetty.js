@@ -1,9 +1,8 @@
     
-    var canvas = document.getElementById("hetty");
-    const c = canvas.getContext("2d");
-
-    canvas.width = 500;
-    canvas.height = 600;
+    var canvas1 = document.getElementById("hetty");
+    const c = canvas1.getContext("2d");
+    canvas1.width = 500;
+    canvas1.height = 600;
     var xPos = 0;
     var yPos = 0;
     var left;
@@ -14,33 +13,11 @@
     var alive = 5;
 
     let mouse = {
-      x: innerWidth/2,
-      y: innerHeight/2
+      x: 0,
+      y: 0
     };
 
-    addEventListener("mousemove", function(event) {
-      mouse.x = event.clientX;
-      mouse.y = event.clientY;
-      if (mouse.x >= xPos) {
-          right = true;
-          left = false;
-      }
-      if (mouse.x <= xPos) {
-        left = true;
-        right = false;
-      }
-      if (mouse.y >= yPos) {
-        down = true;
-        up = false;
-      }
-      if (mouse.y <= yPos) {
-        up = true;
-        down = false;
-      }
-      xPos = mouse.x;
-      yPos = mouse.y;
 
-    });
 
     function getDistance(x1,y1, x2, y2) {
       let xDistance = x2 - x1;
@@ -129,7 +106,7 @@
         if (this != circle1 && this != circle2) {
           if (getDistance(circle1.x,circle1.y,this.x,this.y) - (circle1.radius + this.radius)< 0) {
             //Lose Condition
-            canvas.style.display = "none";
+            canvas1.style.display = "none";
             lose("Rip, Dorian was unable to protect Hetty from himself. As a result, your soul has become more corrupt", 0.1);
             end = true;
             return;
@@ -167,18 +144,18 @@
        
 
 
-        if (this.x - this.radius <= 0 || this.x + this.radius >= canvas.width) {
+        if (this.x - this.radius <= 0 || this.x + this.radius >= canvas1.width) {
           this.velocity.x = -this.velocity.x;
         }
 
-        if (this.y + this.radius >= canvas.height) {
+        if (this.y + this.radius >= canvas1.height) {
           if(!deleted){
             console.log("wtf is wrong");
             alive--;
           }
           deleted = true;
           if(alive == 0){
-            canvas.style.display = "none";
+            canvas1.style.display = "none";
             win("Congrats! You succeeded in saving Hetty!", 0.1);
             end = true;
             return;
@@ -215,8 +192,8 @@
       circle2 = new Circle(10,10,30, 'red',2);
 
         for (let i = 0; i < 5; i++) {
-          let x = Math.random() * canvas.width;
-          let y = Math.random() * canvas.height;
+          let x = Math.random() * canvas1.width;
+          let y = Math.random() * canvas1.height;
           let radius = 10;
           circles.push(new Circle(x,y,radius,'blue',0.5));
         } 
@@ -226,7 +203,7 @@
     function animate () {
       if(!end)
         requestAnimationFrame(animate);
-      c.clearRect(0,0,canvas.width, canvas.height);
+      c.clearRect(0,0,canvas1.width, canvas1.height);
 
       circles.forEach(circle => {
         circle.update(circles);
@@ -235,15 +212,39 @@
       circle2.x = mouse.x;
       circle2.y = mouse.y;
 
-      circle1.x = canvas.width/2;
-      circle1.y = canvas.height-canvas.height/4;
+      circle1.x = canvas1.width/2;
+      circle1.y = canvas1.height-canvas1.height/4;
       circle1.update();
       circle2.update();
 
     }
 
     function bounce(){
-      canvas.style.display = "block";
+      canvas1.style.display = "block";
+      addEventListener("mousemove", function mouseListen(event) {
+      mouse.x = event.screenX - canvas1.offsetLeft;
+      mouse.y = event.screenY - canvas1.offsetTop;
+      console.log(mouse.x +  " " +mouse.y);
+      if (mouse.x >= xPos) {
+          right = true;
+          left = false;
+      }
+      if (mouse.x <= xPos) {
+        left = true;
+        right = false;
+      }
+      if (mouse.y >= yPos) {
+        down = true;
+        up = false;
+      }
+      if (mouse.y <= yPos) {
+        up = true;
+        down = false;
+      }
+      xPos = mouse.x;
+      yPos = mouse.y;
+
+    });
       init();
       animate();
     }

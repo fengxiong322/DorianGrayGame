@@ -3,7 +3,6 @@
   top:0;
   left:0;
   margin: 0;
-  overflow: hidden;
   max-height: 80%;
   max-width: auto;
   z-index: -1;
@@ -15,6 +14,11 @@
 
 .game{
   display: none;	
+}
+
+canvas{
+  width: 400px;
+  height: 400px;
 }
 
 #dodge {
@@ -41,7 +45,6 @@ html, body {
 body {
   margin: 0;
   padding: 10;
-  overflow: hidden;
   background-image:url("https://i.pinimg.com/564x/72/0f/1d/720f1d39c85121582c79142df09a23d0.jpg");
 }
 
@@ -67,6 +70,7 @@ body {
   max-height: 60em;
   background-color: rgba(255,255,255,1);
   z-index: 2;
+  overflow: scroll;
 }
 
 .closepopup {

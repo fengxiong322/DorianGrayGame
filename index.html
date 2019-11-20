@@ -56,34 +56,43 @@ Note: This game is best played on a computer.
                 <button onclick='document.getElementById("gamepopup").style.display = "none";' class="closepopup"> </button>
                 <button onclick="getNextGame()" id="nextGame">Next Game</button>
 
-                <canvas class="gamewindow" id=""></canvas>
+                <canvas class="game" id="decision"></canvas>
+
+                <canvas class = "game" id = "hetty"></canvas>
 
                 <div class = "game" id = "dodge">
                 </div>
 
                 <div class = "game" id = "quiz">
-                    <form>
-                        <p>1. Question Questions</p>
-                        <input type="radio" name="q1" value="1"> Male<br>
-                        <input type="radio" name="q1" value="2"> Female<br>
-                        <input type="radio" name="q1" value="3"> Other<br>
-                        <p>1. Question Questions</p>
-                        <input type="radio" name="q2" value="1"> Male<br>
-                        <input type="radio" name="q2" value="2"> Female<br>
-                        <input type="radio" name="q2" value="3"> Other<br>
-                        <p>1. Question Questions</p>
-                        <input type="radio" name="q3" value="1"> Male<br>
-                        <input type="radio" name="q3" value="2"> Female<br>
-                        <input type="radio" name="q3" value="3"> Other<br>
-                        <p>1. Question Questions</p>
-                        <input type="radio" name="q4" value="1"> Male<br>
-                        <input type="radio" name="q4" value="2"> Female<br>
-                        <input type="radio" name="q4" value="3"> Other<br>
+                    <form id = "form">
+                        <p>1. Why doesn't Dorian want to display the portrait when Basil decides that he wants to?</p>
+                        <input type="radio" name="q1" value="1"> a) Because the portrait has been ruined by Dorian’s actions<br>
+                        <input type="radio" name="q1" value="2"> b) He is embarrassed to show off a picture of himself<br>
+                        <input type="radio" name="q1" value="3"> c) He damaged the painting and doesn’t want to tell Basil<br>
+                        <input type="radio" name="q1" value="4"> d) Lord Henry told him not to<br>
+                        <p>2. How is the painting used by the author?</p>
+                        <input type="radio" name="q2" value="1"> a) To show Dorian’s character<br>
+                        <input type="radio" name="q2" value="2"> b) To influence Dorian<br>
+                        <input type="radio" name="q2" value="3"> c) To help Lord Henry corrupt Dorian<br>
+                        <input type="radio" name="q2" value="4"> d) a and b<br>
+                        <p>3. How does the painting corrupt Dorian?</p>
+                        <input type="radio" name="q3" value="1"> a) It makes fun of him<br>
+                        <input type="radio" name="q3" value="2"> b) It shows Dorian eternal Youth and Beauty and makes him jealous<br>
+                        <input type="radio" name="q3" value="3"> c) It destroys his reputation<br>
+                        <input type="radio" name="q3" value="4"> d) It controls his actions<br>
+                        <p>4. Why does Dorian hide the portrait?</p>
+                        <input type="radio" name="q4" value="1"> a) Because he thinks its ugly<br>
+                        <input type="radio" name="q4" value="2"> b) Because he ruined it and doesn’t want Dorian to know<br>
+                        <input type="radio" name="q4" value="3"> c) Because he does not want to face his own actions<br>
+                        <input type="radio" name="q4" value="4"> d) He doesn’t hide it<br>
+                        <p>5. How is the portrait used to show that Dorian isn’t becoming a good person after “protecting” Hetty?</p>
+                        <input type="radio" name="q5" value="1"> a) It looks more corrupt than before.<br>
+                        <input type="radio" name="q5" value="2"> b) Lord Henry tells him that he is not a good person<br>
+                        <input type="radio" name="q5" value="3"> c) James Vane still wants to kill him<br>
+                        <input type="radio" name="q5" value="4"> d) He does not feel good about himself<br>
                         <button onclick="quizSubmit()">Grade!!</button>
                     </form>
                 </div>
-
-                <canvas class = "game" id = "hetty"></canvas>
 
                 <div id="loseDiv">
                     <h1>You Lose! ;(</h1>
@@ -109,5 +118,6 @@ Note: This game is best played on a computer.
 <script defer type="text/javascript" src="assets/js/maze.js"></script>
 <script defer type="text/javascript" src="assets/js/saveHetty.js"></script>
 <script defer type="text/javascript" src="assets/js/quiz.js"></script>
+<script defer type="text/javascript" src="assets/js/decision.js"></script>
 
 </html>

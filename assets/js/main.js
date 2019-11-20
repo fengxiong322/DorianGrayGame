@@ -11,7 +11,6 @@ function getNextGame() {
   document.getElementById("nextGame").disabled = true;
   document.getElementById("loseDiv").style.display = "none";
   document.getElementById("winDiv").style.display = "none";
-  number = 0;
   switch(number) {
     case 0:
       dodge();
