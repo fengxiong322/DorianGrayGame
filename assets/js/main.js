@@ -25,6 +25,7 @@ function getNextGame() {
       quiz();
       break;
     default:
+      document.getElementById('done').style.display = "block";
       console.log("No such game!");
   }
   number++;

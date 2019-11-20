@@ -20,10 +20,9 @@ var canvas = document.getElementById("decision");
 				var prectx = offscreen.getContext('2d');
 				var rightDoor = [true,false,true];
 				var choice = false;
-				var questions = ["Sybil has died","You find out the portrait reflects your bad decisions","You need help from someone but they refuse to help you"];
-				var rightAnswers = ["Go through the top door to talk to her mother about it ","Go through the bottom door to use this to know when you've done something wrong so you can learn from your mistakes","Go through the top door to find a different way to solve your problem that does not involve their help"];
-				var wrongAnswers = ["Go through the bottom door to forget about it and move on","Go through the top door to hide the painting and ignore it","Go through the bottom door to blackmail them and make them do what you need from them"];
-				//add some vars here like position of stuff and shit
+				var questions = ["Sybil has died","You find out the portrait reflects your bad decisions","You need help from someone but they refuse to help you","You are told that you will have eternal pleasure of you kill someone","Do you believe you should control your emotions and take advantage of them?"];
+				var rightAnswers = ["Go through the top door to talk to her mother about it ","Go through the bottom door to use this to know when you’ve done somehing wrong so you can learn from your mistakes","Go through the top door to solve your problem in a way that does not involve their help","Go through the bottom door to kill the person","Go through the top door for yes"];
+				var wrongAnswers = ["Go through the bottom door to forget about it and move on","Go through the top door to hide the painting and ignore it","Go through the bottom door to blackmail them and make them do what you need from them","Go through the bottom door to choose morality over pleasure","Go through the bottom door for no"];
 
 				    document.addEventListener('keydown', function dodgepress(event) {
 
@@ -53,8 +52,10 @@ var canvas = document.getElementById("decision");
 						}else if (event.keyCode == 83){
 							if (yCoord>=652)
 								if (xCoord+10>336 && xCoord+10<=365){
-									if (!rightDoor[runThrough])
+									if (!rightDoor[runThrough]){
+										score++;
 										choice = true;
+									}
 									yCoord = 340;
 									//if run Through is at 3 move to the next minigame
 									runThrough++;
@@ -77,7 +78,7 @@ var canvas = document.getElementById("decision");
 					//every 10 milliseconds calls this function
 					//draw all ur stuff here
 						//background
-						prectx.font = "20px Arial";
+						prectx.font = "15px Arial";
 						prectx.fillStyle="#BB9447";
 						for (var i =0;i<700;i+=28)
 						{
@@ -122,7 +123,8 @@ var canvas = document.getElementById("decision");
 							prectx.strokeText(rightAnswers[runThrough],40,270);
 							prectx.strokeText(wrongAnswers[runThrough],40,290);
 							prectx.strokeText("Press any key to move your character to one of the doors",40,310);
-						}	
+						}
+						console.log(score);	
 						if(runThrough==3){
 							clearInterval(time);
 							canvas.style.display = "none";
