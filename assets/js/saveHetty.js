@@ -221,8 +221,8 @@
     function bounce(){
       canvas1.style.display = "block";
       addEventListener("mousemove", function mouseListen(event) {
-      mouse.x = event.screenX - canvas1.offsetLeft;
-      mouse.y = event.screenY - canvas1.offsetTop;
+      mouse.x = event.pageX - canvas1.offsetLeft;
+      mouse.y = event.pageY - canvas1.offsetTop;
       console.log(mouse.x +  " " +mouse.y);
       if (mouse.x >= xPos) {
           right = true;
