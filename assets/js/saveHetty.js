@@ -193,7 +193,7 @@
 
         for (let i = 0; i < 5; i++) {
           let x = Math.random() * canvas1.width;
-          let y = Math.random() * canvas1.height;
+          let y = (Math.random() * (canvas1.height-100))+100;
           let radius = 10;
           circles.push(new Circle(x,y,radius,'blue',0.5));
         } 

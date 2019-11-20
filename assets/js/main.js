@@ -39,7 +39,7 @@ function changeStatus(change = 0.1) {
   document.getElementById("progressIndicator").style.width = (newValue*100) + "%";
 }
 
-function lose(input, change){
+function lose(input, change = 0-0.1){
 	changeStatus(change);
 	document.getElementById('loseCustomState').innerHTML = input;
 	document.getElementById('loseDiv').style.display = "block";
