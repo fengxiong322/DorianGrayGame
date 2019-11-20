@@ -1,6 +1,6 @@
 function dodge() {
     document.getElementById('dodge').style.display = "block";
-    const words = ["Aestheism", "beliefs", "poetry"];
+    const words = ["Aestheism", "beliefs", "poetic speech"];
     const playerHeight = 300;
     var x = 100;
     var move = 0;
