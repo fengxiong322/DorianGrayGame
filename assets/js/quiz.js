@@ -26,5 +26,5 @@ function quizSubmit(){
 	if(score == 5)
 		win("You acheived a perfect score!", 0.2);
 	else
-		lose("Rip, you only achieved a score of " + score + "/5", 0-score/5);
+		lose("Rip, you only achieved a score of " + score + "/5", 0-(5-score)/5);
 }
