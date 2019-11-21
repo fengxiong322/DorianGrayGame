@@ -16,10 +16,10 @@ function quizSubmit(){
 	var radio3 = document.getElementsByName('q3');
 	if(radio3[1].checked)
 		score++;
-	var radio4 = document.getElementsByName('q3');
+	var radio4 = document.getElementsByName('q4');
 	if(radio4[2].checked)
 		score++;
-	var radio5 = document.getElementsByName('q3');
+	var radio5 = document.getElementsByName('q5');
 	if(radio5[0].checked)
 		score++;
 	document.getElementById('quiz').style.display = "none";
