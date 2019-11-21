@@ -21,7 +21,7 @@ var canvas = document.getElementById("decision");
 				var rightDoor = [true,false,true];
 				var choice = false;
 				var questions = ["Sybil has died","You find out the portrait reflects your bad decisions","You need help from someone but they refuse to help you","You are told that you will have eternal pleasure of you kill someone","Do you believe you should control your emotions and take advantage of them?"];
-				var rightAnswers = ["Go through the top door to talk to her mother about it ","Go through the bottom door to use this to know when you’ve done somehing wrong","Go through the top door to solve your problem in a way that does not involve their help","Go through the bottom door to kill the person","Go through the top door for yes"];
+				var rightAnswers = ["Go through the top door to talk to her mother about it ","Go through the bottom door to use this to know when you’ve done somehing wrong","Go through the top door to solve your problem in a way that does not involve their help","Go through the top door to kill the person","Go through the top door for yes"];
 				var wrongAnswers = ["Go through the bottom door to forget about it and move on","Go through the top door to hide the painting and ignore it","Go through the bottom door to blackmail them and make them do what you need from them","Go through the bottom door to choose morality over pleasure","Go through the bottom door for no"];
 
 				    document.addEventListener('keydown', function dodgepress(event) {
